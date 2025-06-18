@@ -2,25 +2,20 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>H5P Player 3.8.0</title>
-  <script src="https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/main.bundle.min.js" defer></script>
+  <title>H5P Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/main.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/styles/h5p.min.css" rel="stylesheet" />
 </head>
 <body>
   <div id="h5p-container"></div>
 
   <script>
-    window.addEventListener('load', () => {
-      if (typeof H5PStandalone === 'undefined') {
-        document.body.innerHTML = '<p style="color:red;">H5PStandalone ist nicht geladen!</p>';
-        return;
-      }
-      new H5PStandalone.Player('#h5p-container', {
-        h5pJsonPath: 'Module_1.h5p',
-        frame: true,
-        width: '100%',
-        // height: 500 // optional anpassen
-      });
+    H5PStandalone.init({
+      id: 'h5p-container',
+      h5pJsonPath: 'Module_1.h5p',
+      frame: true,
+      width: '100%',
+      height: 500
     });
   </script>
 </body>
