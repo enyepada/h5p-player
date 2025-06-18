@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <title>H5P Player</title>
-  <!-- H5P Standalone Player Styles -->
-  <link href="assets/h5p.css" rel="stylesheet" />
+
+  <!-- H5P Styles -->
+  <link rel="stylesheet" href="assets/styles/h5p.css">
+  <link rel="stylesheet" href="assets/styles/font-open-sans.css">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/images/h5p.svg" type="image/svg+xml">
 </head>
 <body>
+
   <div id="h5p-container"></div>
 
-  <!-- H5P Standalone Player Script -->
-  <script src="assets/frame.bundle.js"></script>
-
+  <!-- H5PIntegration-Konfiguration -->
   <script>
-    const el = document.getElementById('h5p-container');
-
-    const options = {
-      h5pJsonPath: 'Module_1',   // dein H5P-Ordner (relativ zum index.html)
-      frameJs: 'assets/frame.bundle.js',
-      frameCss: 'assets/h5p.css',
-      frame: true
+    window.H5PIntegration = {
+      baseUrl: ".",
+      url: "Module_1",
+      contents: {
+        "cid-1": {
+          contentUrl: "Module_1",
+          jsonContentPath: "Module_1/content.json",
+          metadata: {
+            title: "Module 1"
+          }
+        }
+      }
     };
-
-    new H5PStandalone.H5P(el, options);
   </script>
+
+  <!-- H5P Standalone Player -->
+  <script src="assets/frame.bundle.js"></script>
 </body>
 </html>
