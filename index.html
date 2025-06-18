@@ -7,19 +7,36 @@
   <!-- H5P Styles -->
   <link rel="stylesheet" href="assets/styles/h5p.css">
   <link rel="stylesheet" href="assets/styles/font-open-sans.css">
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="assets/images/h5p.svg" type="image/svg+xml">
 </head>
 <body>
 
   <div id="h5p-container"></div>
 
-  <!-- H5PIntegration-Konfiguration -->
   <script>
     window.H5PIntegration = {
       baseUrl: ".",
       url: "Module_1",
+      l10n: {
+        H5P: {
+          fullscreen: "Vollbild",
+          exitFullscreen: "Vollbild verlassen",
+          download: "Herunterladen",
+          copyrights: "Urheberrechte",
+          embed: "Einbetten",
+          size: "Größe",
+          showAdvanced: "Erweitert anzeigen",
+          hideAdvanced: "Erweitert ausblenden",
+          advancedHelp: "Diese Einstellung ist nur für Fortgeschrittene.",
+          copyrightInformation: "Urheberrechtsinformationen",
+          close: "Schließen",
+          title: "Titel",
+          author: "Autor",
+          year: "Jahr",
+          source: "Quelle",
+          license: "Lizenz",
+          thumbnail: "Miniaturansicht"
+        }
+      },
       contents: {
         "cid-1": {
           contentUrl: "Module_1",
@@ -32,7 +49,6 @@
     };
   </script>
 
-  <!-- H5P Standalone Player -->
   <script src="assets/frame.bundle.js"></script>
 </body>
 </html>
