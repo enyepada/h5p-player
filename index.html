@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>H5P Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- H5P Styles -->
-  <link rel="stylesheet" href="assets/styles/h5p.css">
   <link rel="stylesheet" href="assets/styles/font-open-sans.css">
+  <link rel="stylesheet" href="assets/styles/h5p.css">
 </head>
 <body>
-
   <div id="h5p-container"></div>
 
+  <!-- H5PIntegration muss VOR frame.bundle.js deklariert sein -->
   <script>
     window.H5PIntegration = {
       baseUrl: ".",
@@ -39,16 +40,18 @@
       },
       contents: {
         "cid-1": {
-          contentUrl: "Module_1",
+          library: "H5P.InteractiveVideo 1.22",  // Beispiel
           jsonContentPath: "Module_1/content.json",
+          contentUrl: "Module_1",
           metadata: {
-            title: "Module 1"
+            title: "Modul 1"
           }
         }
       }
     };
   </script>
 
+  <!-- Frame Bundle muss zuletzt geladen werden -->
   <script src="assets/frame.bundle.js"></script>
 </body>
 </html>
